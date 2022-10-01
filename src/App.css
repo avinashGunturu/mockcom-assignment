@@ -1,38 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
   flex-direction: column;
+ margin-top: 120px;
+ padding: 64px;
+ width: 70%;
+ margin: 120px auto 0px auto;
+}
+
+.heading{
+ font-weight: 700;
+ line-height: 24px;
+ color:#202223 ;
+ padding: 10px 0px;
+}
+.pdHeading {
+  width: 470px;
+  padding: 16px 0px;
+}
+.ptags {
+  display: flex;
+  align-items: center;
+  float: right;
+  gap: 218px;
+}
+.pdHeading p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.9)
+}
+.productlistContainer {
+  width: 100%;
+}
+
+.SelectProductContainer {
+  margin: auto;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.selectproduct{
+ display: flex;
+ align-items: center;
+ gap: 21px;
+}
+
+.indexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30px;
+}
+.editProductCOntainer {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0px 40px;
+  border:1px solid rgb(225, 225, 225);
+}
+.editProductCOntainer input {
+  border: 0px;
+  padding: 10px ;
+
 }
 
-.App-link {
-  color: #61dafb;
+.editProductCOntainer input:focus{
+  outline: none;
+}
+.editProductCOntainer .edit:hover{
+  background: #E5E5E5;
+  height: 38px;
+  width: 38px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.discountbtn {
+  padding: 8px 26px;
+  color: #fff;
+  background-color: #008060;
+  border:0px ;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.applyDIscount {
+  display: flex;
+}
+.applyDIscount .cross{
+  margin-left: 30px;
+}
+.variantsList {
+ text-align: right;
+ padding-right: 265px;
+ margin-top: 20px;
+  width: 740px;
+  text-align: right;
+}
+
+
+
+.addproductbtn {
+  background-color: #E5E5E5;
+  color:#008060 ;
+  border: 3px solid #008060;
+  padding: 16px 64px;
+  margin: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 275px;
+}
+.addproductbtn:hover {
+  background-color: #008060;
+  color: #fff;
+}
+
+.underbluecolor {
+  color:#006EFF ;
+  text-decoration: underline;
+}
+
+.singleVariantContaner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* width: 500px; */
+  margin: 10px 0px 10px 50px;
+}
+.variantName,.discountNumber,.varidantDiscountType {
+  padding:8px 16px ;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.variantName{
+  width: 300px;
+}
+.variantName p {
+  width: 100%;
+}
+.varidantDiscountType{
+  border: 0px;
+}
+
+.varidantDiscountType:focus{
+  outline: none;
+}
+
+.dicountpercentnum {
+  border: 1px solid #E5E5E5;
+  width: 50px;
+  padding: 10px;
+  margin-right: 10px;
+}
+.productdiscountnum {
+  padding: 10PX;
+  border: 1px solid #E5E5E5;
+  margin-right: 10px;
+}
+
+.cross:hover {
+  transform: scale(1.23);
+}
+
+/* MOdel window  */
+
+.modelWrapper {
+  background-color: rgba(0,0,0,0.125);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.PeoductMOdel {
+  background-color: #fff;
+  width: 900px;
+  padding: 24px 32px;
+}
+.MOdelheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
+  border-bottom: 5px solid #E5E5E5;
+}
+.MOdelheader h3 {
+   font-size: 20px;
+}
+.modelWrapper img {
+  transform: scale(2);
+
+}
+.modelWrapper img:hover {
+  transform: scale(2.3);
+ 
+}
+.searchbox {
+  padding: 10px 0px;
+  border-bottom: 5px solid #E5E5E5;
+  display: flex;
+  align-items: center;
+}
+
+.searchboxContainer {
+  display: flex;
+  align-items: baseline;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 100%;
+}
+.searchicon {
+ padding: 14px ;
+}
+.searchinput {
+  width: 100%;
+  padding: 14px 0px;
+  border: 0px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.searchinput:focus {
+  outline: none;
+}
+.producListCOntainer {
+  width: 100%;
+  max-height: 650px;
+  margin: 10px 0px;
+  overflow: scroll;
+}
+.addcancelcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0px;
+}
+.noofprod {
+  font-size: 18px;
+}
+.cancelbtn,.addBtn {
+  padding: 16px 24px;
+  margin: 0px 16px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+.cancelbtn {
+  border: 1px solid #a5a5a5;
+}
+.addBtn.selcted {
+  background-color: #008060;
+  color: #fff;
+}
+.addBtn.nunselcted {
+  background-color: #E5E5E5;
+  color: grey;
+}
+
+.singleVariantcontainer {
+  padding: 16px 10px 16px 58px;
+  /* margin-left: 48px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #E5E5E5;
+}
+.chekboxname input{
+  margin-right: 24px;
+}
+
+.availability {
+  margin-right: 24px;
+}
+
+.mainProductContainer {
+  padding: 24px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.mainproduct,.chekboxx {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 4px;
+}
+.chekboxx {
+  width: 20px;
+  height: 20px;
+  margin-right: 14px;
+
+}
+.mainproduct.active,.chekboxx.active {
+  background-color: green;
+}
+.singleVariantcontainer:hover {
+ background-color: #e9e6e6;
+}
+
+.chekboxname {
+  display: flex;
+  align-items: center;
+}
+.priceAvailability {
+  display: flex;
+}
+.togetherContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.Productimage {
+  width: 24px;
+  height: 24px;
 }

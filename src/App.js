@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import ModelWindow from './components/ModelWindow';
+import { ProductContextProvider } from './components/ProductContext';
+import ProductLists from './components/ProductList';
 
 function App() {
+const {model,setModel,dispatch}=useContext(ProductContextProvider)
+
+const addnewProduct = ()=>{
+  
+  setModel(true)
+  dispatch({type:"new"})
+}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1 className='heading'>Add Products</h1>
+      <div className='pdHeading'>
+        
+        <div className='ptags'>
+        <p>Product</p>
+        <p>Discount</p>
+        </div> 
+      </div>
+     <ProductLists />
+    
+    <button className='addproductbtn' onClick={addnewProduct}>Add Product</button>
+    {
+        (model && <ModelWindow setShowModel={setModel} />)
+        }
     </div>
   );
 }
